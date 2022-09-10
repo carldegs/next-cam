@@ -15,7 +15,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 
   return (
     <QueryClientProvider client={queryClientRef.current}>
-      <Hydrate state={pageProps.dehydratedState}>
+      <Hydrate state={(pageProps as any).dehydratedState}>
         <ChakraProvider theme={theme}>
           <Component {...pageProps} />
         </ChakraProvider>
